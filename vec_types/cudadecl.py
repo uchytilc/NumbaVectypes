@@ -237,7 +237,7 @@ def binary_op_fixed_type_factory(op, _rtrn):
     return Cuda_op
 
 binary_ops = ["atan2", "fmod", "copysign", "remainder", "remquo",
-              "fdim", "hypot", "nextafter", "pow", "powi"]
+              "fdim", "hypot", "nextafter", "pow"]
 for op in binary_ops:
     opf = op + 'f'
     register_op(op, binary_op_floating_type_factory)
@@ -277,7 +277,7 @@ for op in binary_ops:
     register_op(op, binary_op_floating_type_factory, 0) #ignore = 0
     register_op(op, binary_op_fixed_type_factory, types.float32)
 
-binary_ops = ["scalbn", "ldexp"]
+binary_ops = ["scalbn", "ldexp", "powi"]
 for op in binary_ops:
     opf = op + 'f'
     register_op(op, binary_op_floating_type_factory, 1) #ignore = 1
